@@ -1,7 +1,7 @@
 vocaudio
 ========
 
-Trigger OSX media player controls with voice actions.
+Trigger OSX media player controls with voice actions. Speech recognition is carried out using the [SpeechRecognition](https://github.com/Uberi/speech_recognition) library.
 
 ### Getting up and running
 

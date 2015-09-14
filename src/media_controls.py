@@ -14,6 +14,7 @@ NX_KEYTYPE_REWIND = 20
 
 class MediaControls():
   def __press_key(self, key):
+    # http://stackoverflow.com/questions/11045814/emulate-media-key-press-on-mac
     def do_key(down):
       ev = Quartz.NSEvent.otherEventWithType_location_modifierFlags_timestamp_windowNumber_context_subtype_data1_data2_(
         NSSystemDefined, # type
