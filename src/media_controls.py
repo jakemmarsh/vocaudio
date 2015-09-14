@@ -37,14 +37,14 @@ class MediaControls():
     self.__press_key(NX_KEYTYPE_SOUND_UP)
 
   def volume_max(self):
-    for i in range(15):
+    for i in range(20):
       self.volume_up()
 
   def volume_down(self):
     self.__press_key(NX_KEYTYPE_SOUND_DOWN)
 
   def mute(self):
-    for i in range(15):
+    for i in range(20):
       self.volume_down()
 
   def play(self):

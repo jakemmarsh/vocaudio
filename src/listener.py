@@ -1,5 +1,4 @@
 import os
-import time
 import speech_recognition as sr
 from media_controls import MediaControls
 
