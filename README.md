@@ -6,10 +6,11 @@ Trigger OSX media player controls with voice actions. Speech recognition is carr
 ### Getting up and running
 
 1. Clone this repo: `git clone https://github.com/jakemmarsh/vocaudio.git`
-2. `brew install portaudio`
-3. `sudo pip install --allow-external pyaudio --allow-unverified pyaudio pyaudio`
-4. Install remaining dependencies: `sudo python setup.py install`
-5. Run: `python src/main.py`
+2. `brew install flac` (assuming you have [homebrew](http://brew.sh/) installed)
+3. `brew install portaudio`
+4. `sudo pip install --allow-external pyaudio --allow-unverified pyaudio pyaudio`
+5. Install remaining dependencies: `sudo python setup.py install`
+6. Run: `python src/main.py`
 
 ---
 
