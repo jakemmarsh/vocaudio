@@ -18,7 +18,6 @@ setup(
 
   install_requires = [
     'SpeechRecognition',
-    'PyAudio',
     'pyobjc-framework-Quartz'
   ]
 )
