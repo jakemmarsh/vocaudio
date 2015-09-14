@@ -11,6 +11,8 @@ Trigger OSX media player controls with voice actions.
 4. Install remaining dependencies: `sudo python setup.py install`
 5. Run: `python src/main.py`
 
+---
+
 ### Sample configuration file
 
 Currently, this project uses a `settings.cfg` file to store and read the Google Speech Recognition API key. This file should be created in the root directory, and uses the following format:
@@ -19,6 +21,8 @@ Currently, this project uses a `settings.cfg` file to store and read the Google 
 [google]
 key : <YOUR_KEY_HERE>
 ```
+
+---
 
 ### Possible voice commands
 
