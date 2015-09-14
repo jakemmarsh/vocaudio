@@ -30,3 +30,11 @@ This project provides a handful of voice commands by default. When these voice c
 
 - **Increase volume:** responds to commands `volume up` and `sound up`
 - **Decrease volume:** responds to commands `volume down` and `sound down`
+- **Max volume:** responds to commands `volume max` and `sound max`
+- **Mute:** responds to commands `mute`, `volume off` and `sound off`
+- **Play:** responds to command `play`
+- **Pause:** responds to command `pause`
+- **Next track:** responds to commands `next` and `skip`
+- **Previous track:** responds to commands `previous` and `last`
+- **Rewind:** responds to commands `rewind` and `back`
+- **Fast-forward:** responds to commands `forward` and `fast forward`

@@ -1,4 +1,5 @@
 import os
+import time
 import speech_recognition as sr
 from media_controls import MediaControls
 
@@ -8,6 +9,27 @@ class Listener():
     self.r = sr.Recognizer()
     self.m = sr.Microphone()
     self.controls = MediaControls()
+    self.commands = {
+      'volume up': self.controls.volume_up,
+      'sound up': self.controls.volume_down,
+      'volume max': self.controls.volume_max,
+      'sound max': self.controls.volume_max,
+      'volume down': self.controls.volume_down,
+      'sound down': self.controls.volume_down,
+      'mute': self.controls.mute,
+      'volume off': self.controls.mute,
+      'sound off': self.controls.mute,
+      'play': self.controls.play,
+      'pause': self.controls.pause,
+      'skip': self.controls.next,
+      'next': self.controls.next,
+      'previous': self.controls.previous,
+      'last': self.controls.previous,
+      'rewind': self.controls.rewind,
+      'back': self.controls.rewind,
+      'forward': self.controls.fast_forward,
+      'fast forward': self.controls.fast_forward
+    }
 
   def __take_action(self, recognizer, audio):
     print "inside take_action"
@@ -15,10 +37,9 @@ class Listener():
     try:
       phrase = recognizer.recognize_google(audio, key = self.google_key)
 
-      if phrase == 'volume up' or phrase == 'sound up':
-        self.controls.sound_up()
-      elif phrase == 'volume down' or phrase == 'sound down':
-        self.controls.sound_down()
+      if phrase in self.commands:
+        print "phrase does map to a command, about to execute"
+        self.commands[phrase]()
 
       print("Google Speech Recognition thinks you said " + phrase)
     except sr.UnknownValueError:
@@ -35,4 +56,4 @@ class Listener():
     try:
       self.__stop_listening()
     except:
-      print("Not currently listening, will exit.")
+      print("\nNot currently listening, will exit.\n")
