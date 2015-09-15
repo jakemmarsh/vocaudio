@@ -1,4 +1,4 @@
-import os
+import os, time
 import speech_recognition as sr
 from media_controls import MediaControls
 
@@ -7,6 +7,7 @@ class Listener():
     self.google_key = google_key
     self.r = sr.Recognizer()
     self.m = sr.Microphone()
+    self.m.CHUNK = 8192
     self.controls = MediaControls()
     self.commands = {
       'volume up': self.controls.volume_up,
@@ -31,17 +32,18 @@ class Listener():
       'fast forward': self.controls.fast_forward
     }
 
+    with self.m as source:
+      self.r.adjust_for_ambient_noise(source)
+
   def __take_action(self, recognizer, audio):
-    print "inside take_action"
-
     try:
-      phrase = recognizer.recognize_google(audio, key = self.google_key)
-
-      if phrase in self.commands:
-        print "phrase does map to a command, about to execute"
-        self.commands[phrase]()
+      phrase = recognizer.recognize_google(audio)
 
       print("Google Speech Recognition thinks you said " + phrase)
+
+      if phrase.lower() in self.commands:
+        print "phrase does map to a command, about to execute"
+        self.commands[phrase.lower()]()
     except sr.UnknownValueError:
       print("Google Speech Recognition could not understand audio")
       os.system("say 'That command was not recognized.'")
@@ -51,6 +53,9 @@ class Listener():
 
   def run(self):
     self.__stop_listening = self.r.listen_in_background(self.m, self.__take_action)
+    print("\nNow listening for commands.\n")
+    while True:
+      time.sleep(0.1)
 
   def stop(self):
     try:
