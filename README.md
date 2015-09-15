@@ -31,7 +31,7 @@ This project provides a handful of voice commands by default. When these voice c
 
 - **Increase volume:** responds to commands `volume up` and `sound up`
 - **Decrease volume:** responds to commands `volume down` and `sound down`
-- **Max volume:** responds to commands `volume max` and `sound max`
+- **Max volume:** responds to commands `volume max`, `max volume`, and `sound max`
 - **Mute:** responds to commands `mute`, `volume off` and `sound off`
 - **Play:** responds to command `play`
 - **Pause:** responds to command `pause`

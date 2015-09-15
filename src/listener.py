@@ -12,6 +12,7 @@ class Listener():
       'volume up': self.controls.volume_up,
       'sound up': self.controls.volume_down,
       'volume max': self.controls.volume_max,
+      'max volume': self.controls.volume_max,
       'sound max': self.controls.volume_max,
       'volume down': self.controls.volume_down,
       'sound down': self.controls.volume_down,
